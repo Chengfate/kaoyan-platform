@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: kaoyan-platform
+    env: node
+    region: singapore
+    buildCommand: cd backend-js && npm install && cd ../frontend && npm install && npx vite build
+    startCommand: cd backend-js && node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
